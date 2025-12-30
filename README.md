@@ -1,97 +1,127 @@
 # My Claude Code Skills
 
-A curated collection of Claude Code skills organized by application domain.
+A curated collection of Claude Code skills organized by application domain, combining custom skills with curated upstream skills.
 
 ## Directory Structure
 
 ```
-my-skill/
-├── development/        # Development & programming skills
-├── finance/           # Financial analysis & tools
-├── writing/           # Content creation & writing
-├── data-analysis/     # Data processing & analysis
-├── automation/        # Workflow automation
-├── research/          # Research & information gathering
-└── design/            # Design & creative tools
+my-skills/
+├── SOURCES.yaml                    # Upstream source configuration
+├── scripts/
+│   └── sync-upstream.sh            # Script to sync from upstream repos
+│
+├── development/                    # Development & programming
+│   ├── _custom/                    # Your own skills
+│   └── _upstream/                  # Skills from upstream repos
+│       └── mcp-builder/            # Each has .source.yaml for tracking
+│
+├── finance/                        # Financial tools
+│   ├── _custom/
+│   └── _upstream/
+│
+├── writing/                        # Content creation
+├── data-analysis/                  # Data processing
+├── automation/                     # Workflow automation
+├── research/                       # Research tools
+└── design/                         # Design & creative
+```
+
+## Quick Start
+
+### Clone Entire Repository
+```bash
+cd .claude/skills
+git clone https://github.com/lj123as/my-skill.git
+```
+
+### Clone Only Specific Category (Sparse Checkout)
+```bash
+cd .claude/skills
+git clone --filter=blob:none --sparse https://github.com/lj123as/my-skill.git
+cd my-skill
+git sparse-checkout set development    # Only get development skills
+# Or multiple categories:
+git sparse-checkout set development finance automation
 ```
 
 ## Skill Categories
 
-### 🔧 Development (`development/`)
-Skills for software development, code review, testing, and building tools.
+### Development (`development/`)
+Skills for software development, MCP server creation, and tooling.
 
-**Current Skills:**
-- `mcp-builder` - Guide for creating high-quality MCP servers
+| Skill | Source | Description |
+|-------|--------|-------------|
+| mcp-builder | upstream | Guide for creating high-quality MCP servers |
 
-### 💰 Finance (`finance/`)
-Skills for financial analysis, budgeting, and investment tools.
+### Finance (`finance/`)
+Skills for financial analysis and tools. (Coming soon)
 
-**Current Skills:**
-- (Coming soon)
+### Writing (`writing/`)
+Skills for content creation and documentation. (Coming soon)
 
-### ✍️ Writing (`writing/`)
-Skills for content creation, documentation, and writing assistance.
+### Data Analysis (`data-analysis/`)
+Skills for data processing and visualization. (Coming soon)
 
-**Current Skills:**
-- (Coming soon)
+### Automation (`automation/`)
+Skills for workflow automation. (Coming soon)
 
-### 📊 Data Analysis (`data-analysis/`)
-Skills for data processing, visualization, and statistical analysis.
+### Research (`research/`)
+Skills for research and knowledge management. (Coming soon)
 
-**Current Skills:**
-- (Coming soon)
+### Design (`design/`)
+Skills for UI/UX and creative workflows. (Coming soon)
 
-### ⚙️ Automation (`automation/`)
-Skills for workflow automation and task orchestration.
+## Managing Skills
 
-**Current Skills:**
-- (Coming soon)
+### Adding Your Own Skill
+1. Create skill folder in `<category>/_custom/your-skill-name/`
+2. Add `SKILL.md` with skill documentation
+3. Add any supporting files (scripts, references, etc.)
 
-### 🔍 Research (`research/`)
-Skills for research, information gathering, and knowledge management.
+### Syncing Upstream Skills
+```bash
+# Check for updates
+./scripts/sync-upstream.sh --check
 
-**Current Skills:**
-- (Coming soon)
+# Sync specific skill
+./scripts/sync-upstream.sh mcp-builder
 
-### 🎨 Design (`design/`)
-Skills for design, prototyping, and creative workflows.
+# Sync all enabled skills
+./scripts/sync-upstream.sh --all
 
-**Current Skills:**
-- (Coming soon)
+# List tracked skills
+./scripts/sync-upstream.sh --list
+```
 
-## How to Use
+### Adding New Upstream Skill
+1. Edit `SOURCES.yaml` to add skill mapping
+2. Run sync script: `./scripts/sync-upstream.sh <skill-name>`
+3. Skill will be downloaded with `.source.yaml` tracking file
 
-### In Claude Code
+## Source Tracking
 
-1. Clone this repository to your `.claude/skills` directory:
-   ```bash
-   cd .claude/skills
-   git clone https://github.com/lj123as/my-skill.git
-   ```
+Each upstream skill contains a `.source.yaml` file that tracks:
+- Original repository and path
+- Commit hash when synced
+- License information
+- Any local modifications
 
-2. Skills will be automatically available in Claude Code
-
-3. Use category prefixes to organize and find skills easily
-
-### Adding New Skills
-
-1. Choose the appropriate category directory
-2. Add your skill following the SKILL.md format
-3. Update this README with skill information
-4. Commit and push your changes
-
-## Skill Format
-
-Each skill should include:
-- `SKILL.md` - Main skill documentation
-- `LICENSE.txt` - License information (if applicable)
-- `reference/` - Reference materials
-- `scripts/` - Helper scripts
+**Important:** Do not delete `.source.yaml` files - they ensure license compliance.
 
 ## License
 
-Individual skills may have their own licenses. Check each skill's LICENSE.txt file.
+- **Custom skills (`_custom/`)**: Your choice of license
+- **Upstream skills (`_upstream/`)**: See individual `.source.yaml` files
+  - Most are Apache-2.0 from [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+
+## Upstream Sources
+
+| Repository | License | Description |
+|------------|---------|-------------|
+| [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Apache-2.0 | Curated Claude Code skills |
 
 ## Contributing
 
-Feel free to add new skills or improve existing ones. Maintain the category structure for easy discovery.
+1. **Custom skills**: Add to `_custom/` folder in appropriate category
+2. **Upstream suggestions**: Edit `SOURCES.yaml` and submit PR
+3. Keep skills focused and well-documented

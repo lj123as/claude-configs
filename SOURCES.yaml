@@ -1,0 +1,54 @@
+# Upstream Sources Configuration
+# This file defines all external skill sources and their mappings
+
+upstream_repos:
+  awesome-claude-skills:
+    url: https://github.com/ComposioHQ/awesome-claude-skills
+    branch: master
+    license: Apache-2.0
+    description: A curated list of awesome Claude Code skills
+
+# Skill mappings: which upstream skills go to which category
+skills:
+  # Development category
+  development:
+    - source: awesome-claude-skills
+      path: mcp-builder
+      description: Guide for creating high-quality MCP servers
+
+    - source: awesome-claude-skills
+      path: skill-creator
+      description: Tool for creating new Claude Code skills
+      enabled: false  # Set to true to sync this skill
+
+  # Finance category (examples - enable as needed)
+  finance: []
+
+  # Writing category
+  writing:
+    - source: awesome-claude-skills
+      path: changelog-generator
+      description: Automated changelog generation
+      enabled: false
+
+  # Data Analysis category
+  data-analysis: []
+
+  # Automation category
+  automation: []
+
+  # Research category
+  research:
+    - source: awesome-claude-skills
+      path: document-skills
+      description: Document processing skills
+      enabled: false
+
+  # Design category
+  design: []
+
+# Sync settings
+sync:
+  auto_update: false
+  preserve_local_changes: true
+  backup_before_sync: true

@@ -2,42 +2,50 @@
 
 Skills for software development, code generation, testing, API integration, and tool building.
 
+## Directory Structure
+
+```
+development/
+├── _custom/          # Your own development skills
+└── _upstream/        # Skills from upstream repositories
+    └── mcp-builder/  # MCP server development guide
+```
+
 ## Available Skills
 
-### mcp-builder
-**Description:** Comprehensive guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services.
+### Upstream Skills (`_upstream/`)
 
-**Use Cases:**
-- Building MCP servers for API integration
-- Designing agent-friendly tools
-- Creating workflow-based interfaces
-- Implementing Python (FastMCP) or TypeScript MCP servers
+| Skill | Description | Source |
+|-------|-------------|--------|
+| mcp-builder | Guide for creating high-quality MCP servers | awesome-claude-skills |
 
-**Key Features:**
-- Four-phase development workflow
-- Agent-centric design principles
-- Best practices for limited context optimization
-- Evaluation and testing frameworks
+### Custom Skills (`_custom/`)
 
-[View Details](./mcp-builder/SKILL.md)
+No custom skills yet. Add your own!
 
----
+## Adding Custom Skills
 
-## Skill Guidelines
+1. Create a folder in `_custom/` with your skill name
+2. Add `SKILL.md` with documentation
+3. Include any supporting files
 
-When adding development skills to this category:
+Example structure:
 
-1. **Focus on Developer Workflows** - Build skills that solve real development problems
-2. **Include Examples** - Provide working code examples and templates
-3. **Document Best Practices** - Share patterns and anti-patterns
-4. **Test Thoroughly** - Ensure skills work across different scenarios
-5. **Version Control** - Include version information and changelog
+```
+_custom/
+└── my-code-reviewer/
+    ├── SKILL.md
+    ├── LICENSE.txt (optional)
+    └── scripts/
+```
 
-## Subcategories
+## Skill Ideas
 
-Future organization may include:
-- `code-generation/` - Code generation and scaffolding
-- `testing/` - Testing frameworks and strategies
-- `deployment/` - Deployment and CI/CD
-- `api-integration/` - API clients and integrations
-- `tooling/` - Development tools and utilities
+Future skills in this category may include:
+
+- Code review automation
+- Test generation
+- Documentation generation
+- Deployment scripts
+- API client generation
+- Performance profiling

@@ -1,0 +1,26 @@
+# Source tracking file - DO NOT DELETE
+# This file tracks the upstream source for license compliance
+
+upstream:
+  repo: awesome-claude-skills
+  url: https://github.com/ComposioHQ/awesome-claude-skills
+  path: mcp-builder
+  branch: master
+  commit: unknown
+  synced_at: 2024-12-30
+
+license: Apache-2.0
+license_url: https://www.apache.org/licenses/LICENSE-2.0
+
+# Set to 'yes' if you've modified this skill locally
+# If modified, describe changes below
+modified: no
+modifications: |
+  None
+
+# Original authors (from upstream)
+attribution: |
+  Original source: https://github.com/ComposioHQ/awesome-claude-skills
+  Path: mcp-builder
+  Licensed under Apache License 2.0
+  Copyright belongs to original authors (ComposioHQ and contributors)
