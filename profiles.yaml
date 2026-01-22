@@ -1,0 +1,24 @@
+# profiles.yaml - Scene-to-config mapping
+# Usage: python scripts/link-profile.py <profile-name>
+
+profiles:
+  daily-dev:
+    description: "日常开发"
+    skills:
+      - _upstream/mcp-builder
+    agents: []
+    mcps: []
+    hooks: []
+    commands: []
+    rules: []
+    prompts: []
+
+  full:
+    description: "全量加载"
+    include_all: true
+
+# Default profile when no argument provided
+default: daily-dev
+
+# Target directory for symlinks (can be overridden with --target)
+target: ~/.claude
