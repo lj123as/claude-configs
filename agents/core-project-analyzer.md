@@ -1,5 +1,5 @@
 ---
-name: project-analyst
+name: core-project-analyzer
 description: MUST BE USED to analyze Qt/C++ projects and industrial software codebases. Use PROACTIVELY to detect Qt versions, C++ standards, build systems, and architecture patterns for optimal agent routing.
 tools: LS, Read, Grep, Glob, Bash
 ---

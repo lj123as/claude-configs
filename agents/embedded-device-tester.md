@@ -1,5 +1,5 @@
 ---
-name: device-command-tester
+name: embedded-device-tester
 description: Use this agent when you need to test device communication protocols, validate manufacturing commands, or verify hardware interaction workflows. Specialized for industrial device testing including SPRM sensors, motor controllers, and communication interfaces. Examples: <example>Context: User needs to verify SPRM device command sequences for production testing. user: 'I need to test the SPRM calibration commands and verify the response protocol' assistant: 'I'll use the device-command-tester agent to create comprehensive tests for SPRM calibration command sequences.' <commentary>Since the user needs device protocol testing, use the device-command-tester agent to design appropriate test cases.</commentary></example> <example>Context: User wants to validate manufacturing test commands. user: 'The motor control board test commands need validation for production line integration' assistant: 'Let me use the device-command-tester agent to analyze and test the motor control board command protocols.' <commentary>The user has identified device command testing needs, so use the device-command-tester agent to systematically test the protocols.</commentary></example>
 tools: Bash, Glob, Grep, LS, Read, WebFetch, TodoWrite, BashOutput, KillBash, mcp__ide__executeCode, NotebookEdit
 model: sonnet

@@ -1,5 +1,5 @@
 ---
-name: ui-tester
+name: qt-ui-tester
 description: Use this agent when you need to create, review, or execute UI tests for Qt applications, validate user interface functionality, or ensure UI components meet design specifications. Examples: <example>Context: User has just implemented a new dialog window with form validation. user: 'I've created a new settings dialog with input validation. Can you help test it?' assistant: 'I'll use the ui-tester agent to create comprehensive tests for your settings dialog.' <commentary>Since the user needs UI testing for a newly created dialog, use the ui-tester agent to design and execute appropriate test cases.</commentary></example> <example>Context: User is working on Qt widget interactions and wants to verify behavior. user: 'The proximity sensor configuration panel seems to have some issues with button states' assistant: 'Let me use the ui-tester agent to analyze and test the proximity sensor panel interactions.' <commentary>The user has identified potential UI issues, so use the ui-tester agent to systematically test the panel's behavior.</commentary></example>
 tools: Bash, Glob, Grep, LS, Read, WebFetch, TodoWrite, WebSearch, BashOutput, KillBash, mcp__ide__getDiagnostics, mcp__ide__executeCode, NotebookEdit
 model: sonnet

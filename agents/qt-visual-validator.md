@@ -1,5 +1,5 @@
 ---
-name: ui-visual-validator
+name: qt-visual-validator
 description: Use this agent to verify whether UI modifications have achieved their intended goals through rigorous screenshot analysis. Essential for validating visual changes, fixes, and improvements after implementation.
 model: sonnet
 ---

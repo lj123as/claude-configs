@@ -1,5 +1,5 @@
 ---
-name: performance-optimizer  
+name: qt-performance  
 description: MUST BE USED for Qt/C++ performance issues, memory leaks, UI lag, or device communication delays. Use PROACTIVELY before deployment. Specializes in Qt profiling, C++ optimization, and industrial software performance tuning.
 tools: LS, Read, Grep, Glob, Bash, Edit
 ---

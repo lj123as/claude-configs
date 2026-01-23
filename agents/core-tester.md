@@ -1,6 +1,6 @@
 ---
-name: module-tester
-description: MUST BE USED for comprehensive module testing workflows. Takes module source code and test requirements to produce unit tests, integration tests, and detailed test reports. Specialized for Qt/C++ and Python module validation with standardized output reporting.
+name: core-tester
+description: Comprehensive testing strategy, test design, and quality assurance. Handles unit tests, integration tests, and detailed test reports with standardized output reporting.
 tools: Bash, Glob, Grep, LS, Read, WebFetch, TodoWrite, BashOutput, KillBash, mcp__ide__executeCode, NotebookEdit
 model: sonnet
 ---

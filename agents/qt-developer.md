@@ -1,5 +1,5 @@
 ---
-name: cpp-expert
+name: qt-developer
 description: MUST BE USED for C++17/20 development with Qt integration. Specializes in modern C++ patterns, Qt best practices, template metaprogramming, and industrial software architecture. Use for complex language features and performance-critical code.
 tools: LS, Read, Edit, Write, Grep, Glob, Bash
 ---
